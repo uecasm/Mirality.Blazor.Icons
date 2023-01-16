@@ -1,0 +1,12 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" height="1em" preserveAspectRatio="xMidYMid meet" @attributes="Attributes">
+    @ChildContent
+</svg>
+
+@code {
+
+    /// <summary>The actual SVG inner content (usually a list of &lt;path&gt;s).</summary>
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)] public Dictionary<string, object>? Attributes { get; set; }
+
+}

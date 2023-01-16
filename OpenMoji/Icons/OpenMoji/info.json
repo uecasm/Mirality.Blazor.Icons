@@ -1,0 +1,22 @@
+{
+  "name": "OpenMoji",
+  "total": 4071,
+  "author": {
+    "name": "OpenMoji",
+    "url": "https://github.com/hfg-gmuend/openmoji"
+  },
+  "license": {
+    "title": "CC BY-SA 4.0",
+    "spdx": "CC-BY-SA-4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "samples": [
+    "bicycle",
+    "bow-and-arrow",
+    "full-moon-face"
+  ],
+  "height": 18,
+  "category": "Emoji",
+  "palette": true,
+  "lastModified": 1673788312
+}

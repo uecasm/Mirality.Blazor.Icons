@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Generator", "Generator\Generator.csproj", "{12B1A439-CADE-48A5-B6F3-B704ABB8DBA6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mirality.Blazor.Icons", "Base\Mirality.Blazor.Icons.csproj", "{0FBDCC4E-7AC4-43A2-96F6-949526AC4B7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F31CBF94-6DD7-44F9-83A5-D71FA08E61D0}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12B1A439-CADE-48A5-B6F3-B704ABB8DBA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12B1A439-CADE-48A5-B6F3-B704ABB8DBA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12B1A439-CADE-48A5-B6F3-B704ABB8DBA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12B1A439-CADE-48A5-B6F3-B704ABB8DBA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FBDCC4E-7AC4-43A2-96F6-949526AC4B7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FBDCC4E-7AC4-43A2-96F6-949526AC4B7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FBDCC4E-7AC4-43A2-96F6-949526AC4B7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FBDCC4E-7AC4-43A2-96F6-949526AC4B7F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9F4446B4-6775-4355-8901-4EDB01B09808}
+	EndGlobalSection
+EndGlobal
