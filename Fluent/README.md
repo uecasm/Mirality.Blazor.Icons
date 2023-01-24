@@ -10,7 +10,7 @@ Inline components allow you to more easily recolor or otherwise style the icons,
 
 2. Optionally, add the following line to your `_Imports.razor`:
 
-    @import Mirality.Blazor.Icons.Fluent
+        @using Mirality.Blazor.Icons.Fluent
 
 # Usage
 

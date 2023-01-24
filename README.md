@@ -2,7 +2,7 @@ This is the repository for the following projects:
 
 - [`Mirality.Blazor.Icons.Fluent`](FluentIcons) - Blazor components for the Microsoft Fluent UI System icon set
 - [`Mirality.Blazor.Icons.OpenMoji`](OpenMoji) - Blazor components for the OpenMoji icon set
-- ['Mirality.Blazor.Icons'](Base) - The common base library for the icon set components
+- [`Mirality.Blazor.Icons`](Base) - The common base library for the icon set components
 - [`Generator`](Generator) - The code generator for the icon sets
 
 If you're interested in additional icon sets, open an issue and let me know.

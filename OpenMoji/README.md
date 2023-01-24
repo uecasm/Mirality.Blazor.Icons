@@ -8,7 +8,7 @@ This is a Blazor component wrapper library for all of the icons in the [OpenMoji
 
 2. Optionally, add the following line to your `_Imports.razor`:
 
-    @import Mirality.Blazor.Icons.OpenMoji
+        @using Mirality.Blazor.Icons.OpenMoji
 
 # Usage
 

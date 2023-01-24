@@ -12,7 +12,7 @@ However if you want to "manually trim" by only including specific icons into you
 
 2. Optionally, add the following line to your `_Imports.razor`:
 
-    @import Mirality.Blazor.Icons
+        @using Mirality.Blazor.Icons
 
 # Usage
 
