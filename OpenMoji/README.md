@@ -1,4 +1,4 @@
-![.NET 6,7](https://img.shields.io/static/v1?label=.NET&message=6,7&color=blue) [![NuGet version (Mirality.Blazor.Icons.OpenMoji)](https://img.shields.io/nuget/v/Mirality.Blazor.Icons.OpenMoji.svg?logo=nuget)](https://www.nuget.org/packages/Mirality.Blazor.Icons.Fluent/)
+![.NET 6,8,10](https://img.shields.io/static/v1?label=.NET&message=6,8,10&color=blue) [![NuGet version (Mirality.Blazor.Icons.OpenMoji)](https://img.shields.io/nuget/v/Mirality.Blazor.Icons.OpenMoji.svg?logo=nuget)](https://www.nuget.org/packages/Mirality.Blazor.Icons.Fluent/)
 
 This is a Blazor component wrapper library for all of the icons in the [OpenMoji](https://openmoji.org/) icon set, released under the CC-BY-SA 4.0 license.
 
