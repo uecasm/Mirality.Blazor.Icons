@@ -1,4 +1,4 @@
-![.NET 6,7](https://img.shields.io/static/v1?label=.NET&message=6,7&color=blue) [![NuGet version (Mirality.Blazor.Icons)](https://img.shields.io/nuget/v/Mirality.Blazor.Icons.svg?logo=nuget)](https://www.nuget.org/packages/Mirality.Blazor.Icons/)
+![.NET 6,8,10](https://img.shields.io/static/v1?label=.NET&message=6,8,10&color=blue) [![NuGet version (Mirality.Blazor.Icons)](https://img.shields.io/nuget/v/Mirality.Blazor.Icons.svg?logo=nuget)](https://www.nuget.org/packages/Mirality.Blazor.Icons/)
 
 This is a Blazor component library that has some simple base components (currently only one, in fact) to support the more specific icon set libraries.
 
