@@ -16,19 +16,21 @@ Inline components allow you to more easily recolor or otherwise style the icons,
 
 To display an icon, include its component (with optional `class`), e.g.:
 
-    <IconFluentGridDots28Regular class="text-info" />
+    <IconFluentGridDotsRegular class="text-info" />
 
 You can also set other attributes of the resulting `<svg/>` element, such as its `style` or overriding its `height`.
 
-All component names have been PascalCased from the snake-cased original icon names, and have the `IconFluent` prefix to allow importing multiple icon sets without collisions.
+All component names have been PascalCased from the snake-cased original icon names (omitting the size number), and have the `IconFluent` prefix to allow importing multiple icon sets without collisions.
 
 For more usage information, including customisation options, see the docs for the [`Mirality.Blazor.Icons`](https://www.nuget.org/packages/Mirality.Blazor.Icons/) base package.
 
 # Sizing
 
-The number in the icon name refers to the "native" size of the icon (and thus its internal `viewBox`); however by default all icons will render with a height of `1em` -- i.e. matching your current font height.  As such, to resize them you can just change the font size.  Alternatively, you can override the `height` to some other explicit size.
+The size number from the original icon names has been removed (THIS IS A BREAKING CHANGE FROM 1.0!) and only a single icon from each size group has been kept -- usually the 24px variant where available, but otherwise the largest available size, under the assumption that SVG icons should downsize gracefully.  Including the size variants just produced way too many components such that the compiler actually broke under the memory strain.
 
-If you want to render the icon at its native size then you will need to set the font size or `height` accordingly.
+By default all icons will render with a height of `1em` -- i.e. matching your current font height.  As such, to resize them you can just change the font size.  Alternatively, you can override the `height` to some other explicit size.
+
+If you want to render the icon at its native size then you will need to set the font size or `height` accordingly; for example, to render a "24" icon at its native size, use `height="24px"`.  You can inspect the component source if you want to learn the native size, but for the most part this should not be important.
 
 # Gallery
 

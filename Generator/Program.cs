@@ -3,6 +3,7 @@ using System.Security.AccessControl;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
+using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -95,6 +96,11 @@ internal class IconGeneratorService : ForegroundService
             var icons = (await _Http.GetFromJsonAsync<JsonObject>($"{mapping.IconPrefix}.json", options, cancel))!;
             _ = Directory.CreateDirectory(mapping.OutputPath);
 
+            foreach (var file in Directory.GetFiles(mapping.OutputPath, "*.razor"))
+            {
+                File.Delete(file);
+            }
+
             icons["info"]!["lastModified"] = icons["lastModified"]!.Deserialize<JsonNode>();
             await using (var stream = File.Create(Path.Combine(mapping.OutputPath, "info.json")))
             {
@@ -105,8 +111,14 @@ internal class IconGeneratorService : ForegroundService
             var defaultTop = icons["top"]?.GetValue<int>() ?? 0;
             var defaultWidth = icons["width"]?.GetValue<int>() ?? 16;
             var defaultHeight = icons["height"]?.GetValue<int>() ?? 16;
+            var iconsJson = icons["icons"]!.AsObject();
 
-            foreach (var icon in icons["icons"]!.AsObject())
+            if (mapping.IconPrefix == "fluent")
+            {
+                iconsJson = FilterFluentIcons(iconsJson);
+            }
+
+            foreach (var icon in iconsJson)
             {
                 cancel.ThrowIfCancellationRequested();
                 if (icon.Value!["hidden"]?.GetValue<bool>() == true) continue;
@@ -133,7 +145,51 @@ internal class IconGeneratorService : ForegroundService
         }
     }
 
-    // iconName is something like "grid-dots-28-regular" and we want "GridDots28Regular"
+    private static readonly Regex FluentIconNameRegex = new(
+        @"^(?<base>.+)-(?<size>\d+)-(?<style>regular|filled|light)$",
+        RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.ExplicitCapture | RegexOptions.IgnoreCase);
+
+    /// <summary>The Fluent icon set is just way too damn big (~19k icons!) and the compiler runs
+    /// out of memory.  Pick a single representative size for each icon and only offer that.</summary>
+    private static JsonObject FilterFluentIcons(JsonObject allIcons)
+    {
+        var preferred = new Dictionary<string, (int size, KeyValuePair<string, JsonNode?> content)>();
+
+        foreach (var icon in allIcons)
+        {
+            var m = FluentIconNameRegex.Match(icon.Key);
+            if (!m.Success)
+            {
+                throw new FormatException($"Unexpected format of icon name {icon.Key}");
+            }
+
+            var name = m.Groups["base"].Value;
+            var size = int.Parse(m.Groups["size"].Value);
+            var style = m.Groups["style"].Value;
+            var key = $"{name}-{style}";
+
+            if (preferred.TryGetValue(key, out var pref))
+            {
+                if (size == 24 || (pref.size != 24 && size > pref.size))
+                {
+                    preferred[key] = (size, icon);
+                }
+            }
+            else
+            {
+                preferred[key] = (size, icon);
+            }
+        }
+
+        var result = new JsonObject();
+        foreach (var icon in preferred)
+        {
+            result.Add(icon.Key, icon.Value.content.Value!.DeepClone());
+        }
+        return result;
+    }
+
+    // iconName is something like "grid-dots-regular" and we want "GridDotsRegular"
     private static string MakeFilename(string iconName) => string.Join("", iconName.Split('-').Select(WordCase));
     private static string WordCase(string word) => char.ToUpperInvariant(word[0]) + (word.Length > 1 ? word[1..] : "");
 }
