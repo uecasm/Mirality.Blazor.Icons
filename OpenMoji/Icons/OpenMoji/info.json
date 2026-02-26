@@ -1,6 +1,6 @@
 {
   "name": "OpenMoji",
-  "total": 4071,
+  "total": 4449,
   "author": {
     "name": "OpenMoji",
     "url": "https://github.com/hfg-gmuend/openmoji"
@@ -13,10 +13,19 @@
   "samples": [
     "bicycle",
     "bow-and-arrow",
-    "full-moon-face"
+    "full-moon-face",
+    "plus",
+    "solar-cell",
+    "battery"
   ],
-  "height": 18,
+  "height": 36,
+  "displayHeight": 18,
   "category": "Emoji",
+  "tags": [
+    "Precise Shapes",
+    "Has Padding",
+    "Uses Stroke"
+  ],
   "palette": true,
-  "lastModified": 1673788312
+  "lastModified": 1771310431
 }

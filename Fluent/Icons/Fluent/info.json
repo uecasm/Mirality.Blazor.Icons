@@ -1,7 +1,7 @@
 {
   "name": "Fluent UI System Icons",
-  "total": 11814,
-  "version": "1.1.179",
+  "total": 19100,
+  "version": "1.1.319",
   "author": {
     "name": "Microsoft Corporation",
     "url": "https://github.com/microsoft/fluentui-system-icons"
@@ -9,15 +9,21 @@
   "license": {
     "title": "MIT",
     "spdx": "MIT",
-    "url": "https://github.com/microsoft/fluentui-system-icons/blob/master/LICENSE"
+    "url": "https://github.com/microsoft/fluentui-system-icons/blob/main/LICENSE"
   },
   "samples": [
     "zoom-out-24-filled",
     "drink-coffee-24-regular",
-    "photo-filter-24-regular"
+    "photo-filter-24-regular",
+    "checkmark-24-filled",
+    "oval-24-filled",
+    "cloud-24-filled"
   ],
-  "displayHeight": 24,
-  "category": "General",
+  "category": "UI Other / Mixed Grid",
+  "tags": [
+    "Precise Shapes",
+    "Has Padding"
+  ],
   "palette": false,
-  "lastModified": 1661146680
+  "lastModified": 1771310241
 }
